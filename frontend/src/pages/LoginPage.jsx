@@ -30,7 +30,7 @@ function LoginPage() {
             ))
         }
         <div className="w-2/3 items-center justify-center flex rounded-md p-5">
-          <img src="../../public/logoMedio.png"/>
+          <img src="/logoMedio.png"/>
         </div>
         <form
           onSubmit={onSubmit}
