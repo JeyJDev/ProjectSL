@@ -120,7 +120,9 @@ export const login = async(req, res) => {
                 const token = await createAccessToken({id: playerFound._id})
                 isPlayer = true
                 res.cookie('token', token)
-                
+                return res.status(200).res.json({
+                        isPlayer: isPlayer
+                })
             }
             else{
                 return res.status(400).json(["Incorrect password"])
