@@ -121,7 +121,7 @@ export const login = async(req, res) => {
                 isPlayer = true
                 res.cookie('token', token)
                 res.json({
-                        isPlayer: isPlayer
+                    isPlayer: isPlayer
                 })
             }
             else{
