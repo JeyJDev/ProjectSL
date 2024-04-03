@@ -38,7 +38,7 @@ export const registerPlayer = async(req, res) => {
 
         res.status(200).json({
             success: true,
-            isPlayer = isPlayer,
+            isPlayer: isPlayer,
             message: "user created successfully"
         })
     } catch (error) {
@@ -80,7 +80,7 @@ export const registerTeam = async(req, res) => {
 
         res.status(200).json({
             success: true,
-            isTeam = isTeam,
+            isTeam: isTeam,
             message: "user created successfully"
         })
     } catch (error) {
@@ -121,8 +121,7 @@ export const login = async(req, res) => {
                 isPlayer = true
                 res.cookie('token', token)
                 res.status(200).json({
-                    isPlayer: isPlayer,
-                    message: "login correct"
+                    isPlayer: isPlayer
                 })
             }
             else{
@@ -135,7 +134,7 @@ export const login = async(req, res) => {
                     const token = await createAccessToken({id: teamFound._id})
                     isTeam = true
                     res.cookie('token', token)
-                    res.json({
+                    res.status(200).res.json({
                         isTeam: isTeam
                     })
                 }
