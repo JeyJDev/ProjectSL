@@ -36,11 +36,18 @@ export const registerPlayer = async(req, res) => {
 
         res.cookie('token', token)
 
-        res.json({
+        res.status(200).json({
+            success: true,
+            isPlayer = isPlayer,
             message: "user created successfully"
         })
     } catch (error) {
         console.log(error)
+        res.status(500).json({
+            success: false,
+            message: "error creating user"
+        })
+        
     }
 
     
@@ -71,11 +78,17 @@ export const registerTeam = async(req, res) => {
 
         res.cookie('token', token)
 
-        res.json({
+        res.status(200).json({
+            success: true,
+            isTeam = isTeam,
             message: "user created successfully"
         })
     } catch (error) {
         console.log(error)
+        res.status(500).json({
+            success: false,
+            message: "error creating user"
+        })
     }
 
     
@@ -107,8 +120,9 @@ export const login = async(req, res) => {
                 const token = await createAccessToken({id: playerFound._id})
                 isPlayer = true
                 res.cookie('token', token)
-                res.json({
-                    isPlayer: isPlayer
+                res.status(200).json({
+                    isPlayer: isPlayer,
+                    message: "login correct"
                 })
             }
             else{
