@@ -49,6 +49,7 @@ export const AuthProvider = ({children}) =>{
             setIsAuthenticated(true)
             
             if (res.data.isPlayer) {
+                console.log(res.data.isPLayer)
                 setUserType('player');
             }
             if (res.data.isTeam) {
