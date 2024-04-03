@@ -13,7 +13,7 @@ import { FRONTEND_URL } from './config.js'
 const app = express()
 
 app.use(cors({
-    origin: FRONTEND_URL,
+    origin: "https://ligasupremacia.netlify.app",
     credentials: true
 }))
 app.use(morgan('dev'))
