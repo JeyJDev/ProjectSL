@@ -3,7 +3,7 @@ import { DB_HOST } from "./config.js";
 
 export const connectDB = async () => {
     try {
-        await mongoose.connect(DB_HOST);
+        await mongoose.connect('mongodb+srv://josejorgefisi1620:Bh2VTSfWVftChF9m@devdb.gh1wtki.mongodb.net/?retryWrites=true&w=majority&appName=devDB');
         console.log('>>> connected to the DB <<<')
     } catch (error) {
         console.log('>>> No se pudo conectar a la base de datos <<<')
