@@ -145,10 +145,6 @@ export const login = async(req, res) => {
                 return res.status(400).json(["user not found"])
             }
         }
-
-        res.json({
-            message: "login successfully"
-        })
     } catch (error) {
         console.log(error)
     }
